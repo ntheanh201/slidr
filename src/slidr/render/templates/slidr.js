@@ -94,7 +94,7 @@ if (isPresenter) {
   document.getElementById('pres-main').addEventListener('wheel', function(e) {
     if (Math.abs(e.deltaY) < 10) return;
     var now = Date.now();
-    if (now - wheelCooldown < 500) return;
+    if (now - wheelCooldown < 250) return;
     wheelCooldown = now;
     advance(e.deltaY > 0 ? 1 : -1);
   }, { passive: true });
@@ -275,7 +275,7 @@ if (isPresenter) {
   document.addEventListener('wheel', function(e) {
     if (Math.abs(e.deltaY) < 10) return;
     var now = Date.now();
-    if (now - wheelCooldown < 500) return;
+    if (now - wheelCooldown < 250) return;
     wheelCooldown = now;
     show(e.deltaY > 0 ? current + 1 : current - 1);
   }, { passive: true });
